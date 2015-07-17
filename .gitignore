@@ -1,0 +1,4 @@
+Etherpad*/*
+.build/*
+*.swp
+*.tar.gz

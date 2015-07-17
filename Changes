@@ -1,0 +1,4 @@
+Revision history for Etherpad
+
+{{$NEXT}}
+    - Rewriting of Etherpad::API using Mojo::UserAgent
