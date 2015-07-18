@@ -45,7 +45,9 @@ is $ec->get_revisions_count($p), 0, 'getRevisions';
 
 is $ec->get_saved_revisions_count($p), 0, 'getSavedRevisionsCount';
 
-is $ec->get_users_count($p), 0, 'padUsersCount';
+is $ec->pad_users_count($p), 0, 'padUsersCount';
+
+is $ec->get_users_count($p), 0, 'padUsersCount 2';
 
 my $t = $ec->list_saved_revisions($p);
 is_deeply $t, [], 'listSavedRevisions';

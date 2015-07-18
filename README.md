@@ -370,7 +370,11 @@ See http://etherpad.org/doc/v1.5.1/#index\_pad
 
 ### get\_users\_count
 
-    Usage     : $ec->get_users_count('padID')
+    Alias for pad_users_count (see below)
+
+### pad\_users\_count
+
+    Usage     : $ec->pad_users_count('padID')
     Purpose   : Returns the number of user that are currently editing this pad
     Returns   : The number of users
     Argument  : A pad ID
@@ -534,6 +538,10 @@ The latest source code can be browsed and fetched at:
 
     https://git.framasoft.org/luc/etherpad
     git clone https://git.framasoft.org/luc/etherpad.git
+
+Source code mirror:
+
+    https://github.com/ldidry/etherpad
 
 You can also look for information at:
 

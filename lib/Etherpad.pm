@@ -1354,7 +1354,11 @@ sub save_revision {
 
 =head3 get_users_count
 
- Usage     : $ec->get_users_count('padID')
+ Alias for pad_users_count (see below)
+
+=head3 pad_users_count
+
+ Usage     : $ec->pad_users_count('padID')
  Purpose   : Returns the number of user that are currently editing this pad
  Returns   : The number of users
  Argument  : A pad ID
@@ -1366,6 +1370,13 @@ sub save_revision {
 
 
 sub get_users_count {
+    my $c      = shift;
+    my $pad_id = shift;
+
+    return $c->pad_users_count($pad_id);
+}
+
+sub pad_users_count {
     my $c      = shift;
     my $pad_id = shift;
 
@@ -2031,6 +2042,10 @@ The latest source code can be browsed and fetched at:
 
     https://git.framasoft.org/luc/etherpad
     git clone https://git.framasoft.org/luc/etherpad.git
+
+Source code mirror:
+
+    https://github.com/ldidry/etherpad
 
 You can also look for information at:
 
