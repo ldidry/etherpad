@@ -4,7 +4,7 @@ Etherpad - interact with Etherpad API
 
 # VERSION
 
-version 1.2.12.0
+version 1.2.12.1
 
 # SYNOPSIS
 

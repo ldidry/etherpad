@@ -15,6 +15,8 @@ has 'password';
 has 'proxy';
 has 'ua' => sub { Mojo::UserAgent->new; };
 
+our $VERSION = '1.2.12.1';
+
 =head1 SYNOPSIS
 
   use Etherpad;
@@ -106,7 +108,9 @@ sub _execute {
     my $url = Mojo::URL->new($c->url);
     $url->userinfo($c->user.':'.$c->password) if defined $c->user && defined $c->password;
 
-    $url->path($url->path.'/api/'.$args->{api}.'/'.$args->{method});
+    my $path = $url->path;
+    $path =~ s#/$##;
+    $url->path($path.'/api/'.$args->{api}.'/'.$args->{method});
 
     $args->{args}->{apikey} = $c->apikey;
 

@@ -100,6 +100,9 @@ ok $t1 < $t2, 'last getLastEdited should be when setText was performed';
 
 ok $ec->move_pad($p, $p2), 'movePad';
 
+$t = $ec->list_all_pads();
+is_deeply $t, [$p2], 'listAllPads';
+
 is $ec->get_text($p2), "Bite my shiny metal ass.\n", 'getText, check if the text is the same after movePad';
 
 ok $ec->move_pad($p2, $p), 'movePad 2';
