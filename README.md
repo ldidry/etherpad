@@ -517,6 +517,17 @@ See [http://etherpad.org/doc/v1.5.6/#index\_pads](http://etherpad.org/doc/v1.5.6
     Returns   : An array or an array reference depending on the context, containing the pads names
     See       : http://etherpad.org/doc/v1.5.6/#index_listallpads
 
+# INSTALL
+
+After getting the tarball on https://metacpan.org/release/Etherpad, untar it, go to the directory and:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+If you are on a windows box you should use 'nmake' rather than 'make'.
+
 # BUGS and SUPPORT
 
 You can find documentation for this module with the perldoc command.

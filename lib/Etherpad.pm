@@ -2025,6 +2025,17 @@ sub list_all_pads {
 }
 
 #################### footer pod documentation begin ###################
+=head1 INSTALL
+
+After getting the tarball on https://metacpan.org/release/Etherpad, untar it, go to the directory and:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+If you are on a windows box you should use 'nmake' rather than 'make'.
+
 =head1 BUGS and SUPPORT
 
 You can find documentation for this module with the perldoc command.
