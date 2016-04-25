@@ -15,7 +15,7 @@ has 'password';
 has 'proxy';
 has 'ua' => sub { Mojo::UserAgent->new; };
 
-our $VERSION = '1.2.12.1';
+our $VERSION = '1.2.13.0';
 
 =head1 SYNOPSIS
 
@@ -37,7 +37,7 @@ our $VERSION = '1.2.12.1';
 
 Client module for the Etherpad HTTP API.
 
-The Etherpad API currently supported is the 1.2.12 (Etherpad version: 1.5.6)
+The Etherpad API currently supported is the 1.2.13 (Etherpad version: 1.6.0)
 
 This module aims to replace L<Etherpad::API>
 
@@ -149,7 +149,7 @@ Etherpad inherits all methods from Mojo::Base and implements the following new o
 
 Pads can belong to a group. The padID of grouppads is starting with a groupID like g.asdfasdfasdfasdf$test
 
-See L<http://etherpad.org/doc/v1.5.6/#index_groups>
+See L<http://etherpad.org/doc/v1.6.0/#index_groups>
 
 =cut
 #################################################################
@@ -162,7 +162,7 @@ See L<http://etherpad.org/doc/v1.5.6/#index_groups>
  Purpose   : Creates a new group
  Returns   : The new group ID
  Argument  : None
- See       : http://etherpad.org/doc/v1.5.6/#index_creategroup
+ See       : http://etherpad.org/doc/v1.6.0/#index_creategroup
 
 =cut
 
@@ -188,7 +188,7 @@ sub create_group {
  Purpose   : This functions helps you to map your application group ids to epl group ids
  Returns   : The epl group id
  Argument  : Your application group id
- See       : http://etherpad.org/doc/v1.5.6/#index_creategroupifnotexistsfor_groupmapper
+ See       : http://etherpad.org/doc/v1.6.0/#index_creategroupifnotexistsfor_groupmapper
 
 =cut
 
@@ -225,7 +225,7 @@ sub create_group_if_not_exists_for {
  Purpose   : Deletes a group
  Returns   : 1 if it succeeds
  Argument  : The id of the group you want to delete
- See       : http://etherpad.org/doc/v1.5.6/#index_deletegroup_groupid
+ See       : http://etherpad.org/doc/v1.6.0/#index_deletegroup_groupid
 
 =cut
 
@@ -262,7 +262,7 @@ sub delete_group {
  Purpose   : Returns all pads of this group
  Returns   : An array or an array reference (depending on the context) which contains the pad ids
  Argument  : The id of the group from which you want the pads
- See       : http://etherpad.org/doc/v1.5.6/#index_listpads_groupid
+ See       : http://etherpad.org/doc/v1.6.0/#index_listpads_groupid
 
 =cut
 
@@ -299,7 +299,7 @@ sub list_pads {
  Purpose   : Creates a new pad in this group
  Returns   : 1 if it succeeds
  Argument  : The group id, the pad name, optionally takes the pad's initial text
- See       : http://etherpad.org/doc/v1.5.6/#index_creategrouppad_groupid_padname_text
+ See       : http://etherpad.org/doc/v1.6.0/#index_creategrouppad_groupid_padname_text
 
 =cut
 
@@ -340,7 +340,7 @@ sub create_group_pad {
  Purpose   : Lists all existing groups
  Returns   : An array or an array reference (depending on the context) which contains the groups ids
  Argument  : None
- See       : http://etherpad.org/doc/v1.5.6/#index_listallgroups
+ See       : http://etherpad.org/doc/v1.6.0/#index_listallgroups
 
 =cut
 
@@ -363,7 +363,7 @@ sub list_all_groups {
 
 These authors are bound to the attributes the users choose (color and name).
 
-See L<http://etherpad.org/doc/v1.5.6/#index_author>
+See L<http://etherpad.org/doc/v1.6.0/#index_author>
 
 =cut
 #################################################################
@@ -376,7 +376,7 @@ See L<http://etherpad.org/doc/v1.5.6/#index_author>
  Purpose   : Creates a new author
  Returns   : The new author ID
  Argument  : Optionally takes a string as argument : the new author's name
- See       : http://etherpad.org/doc/v1.5.6/#index_createauthor_name
+ See       : http://etherpad.org/doc/v1.6.0/#index_createauthor_name
 
 =cut
 
@@ -407,7 +407,7 @@ sub create_author {
  Purpose   : This functions helps you to map your application author ids to epl author ids
  Returns   : The epl author ID
  Argument  : Your application author ID (mandatory) and optionally the epl author name
- See       : http://etherpad.org/doc/v1.5.6/#index_createauthorifnotexistsfor_authormapper_name
+ See       : http://etherpad.org/doc/v1.6.0/#index_createauthorifnotexistsfor_authormapper_name
 
 =cut
 
@@ -446,7 +446,7 @@ sub create_author_if_not_exists_for {
  Purpose   : Returns an array of all pads this author contributed to
  Returns   : An array or an array reference depending on the context, containing the pads names
  Argument  : An epl author ID
- See       : http://etherpad.org/doc/v1.5.6/#index_listpadsofauthor_authorid
+ See       : http://etherpad.org/doc/v1.6.0/#index_listpadsofauthor_authorid
 
 =cut
 
@@ -480,7 +480,7 @@ sub list_pads_of_author {
  Purpose   : Returns the Author Name of the author
  Returns   : The author name
  Argument  : The epl author ID
- See       : http://etherpad.org/doc/v1.5.6/#index_getauthorname_authorid
+ See       : http://etherpad.org/doc/v1.6.0/#index_getauthorname_authorid
 
 =cut
 
@@ -514,7 +514,7 @@ sub get_author_name {
 
 Sessions can be created between a group and an author. This allows an author to access more than one group. The sessionID will be set as a cookie to the client and is valid until a certain date. The session cookie can also contain multiple comma-seperated sessionIDs, allowing a user to edit pads in different groups at the same time. Only users with a valid session for this group, can access group pads. You can create a session after you authenticated the user at your web application, to give them access to the pads. You should save the sessionID of this session and delete it after the user logged out.
 
-See L<http://etherpad.org/doc/v1.5.6/#index_session>
+See L<http://etherpad.org/doc/v1.6.0/#index_session>
 
 =cut
 #################################################################
@@ -527,7 +527,7 @@ See L<http://etherpad.org/doc/v1.5.6/#index_session>
  Purpose   : Creates a new session. validUntil is an unix timestamp in seconds
  Returns   : The epl session ID
  Argument  : An epl group ID, an epl author ID and an valid unix timestamp (the session validity end date)
- See       : http://etherpad.org/doc/v1.5.6/#index_createsession_groupid_authorid_validuntil
+ See       : http://etherpad.org/doc/v1.6.0/#index_createsession_groupid_authorid_validuntil
 
 =cut
 
@@ -572,7 +572,7 @@ sub create_session {
  Purpose   : Deletes a session
  Returns   : 1 if it succeeds
  Argument  : An epl session ID
- See       : http://etherpad.org/doc/v1.5.6/#index_deletesession_sessionid
+ See       : http://etherpad.org/doc/v1.6.0/#index_deletesession_sessionid
 
 =cut
 
@@ -609,7 +609,7 @@ sub delete_session {
  Purpose   : Returns informations about a session
  Returns   : A hash reference, containing 3 keys : authorID, groupID and validUntil
  Argument  : An epl session ID
- See       : http://etherpad.org/doc/v1.5.6/#index_getsessioninfo_sessionid
+ See       : http://etherpad.org/doc/v1.6.0/#index_getsessioninfo_sessionid
 
 =cut
 
@@ -645,7 +645,7 @@ sub get_session_info {
  Purpose   : Returns all sessions of a group
  Returns   : Returns a hash reference, which keys are sessions ID and values are sessions infos (see get_session_info)
  Argument  : An epl group ID
- See       : http://etherpad.org/doc/v1.5.6/#index_listsessionsofgroup_groupid
+ See       : http://etherpad.org/doc/v1.6.0/#index_listsessionsofgroup_groupid
 
 =cut
 
@@ -681,7 +681,7 @@ sub list_sessions_of_group {
  Purpose   : Returns all sessions of an author
  Returns   : Returns a hash reference, which keys are sessions ID and values are sessions infos (see get_session_info)
  Argument  : An epl group ID
- See       : http://etherpad.org/doc/v1.5.6/#index_listsessionsofauthor_authorid
+ See       : http://etherpad.org/doc/v1.6.0/#index_listsessionsofauthor_authorid
 
 =cut
 
@@ -714,7 +714,7 @@ sub list_sessions_of_author {
 
 Pad content can be updated and retrieved through the API.
 
-See L<http://etherpad.org/doc/v1.5.6/#index_pad_content>
+See L<http://etherpad.org/doc/v1.6.0/#index_pad_content>
 
 =cut
 #################################################################
@@ -727,7 +727,7 @@ See L<http://etherpad.org/doc/v1.5.6/#index_pad_content>
  Purpose   : Returns the text of a pad
  Returns   : A string, containing the text of the pad
  Argument  : Takes a pad ID (mandatory) and optionally a revision number
- See       : http://etherpad.org/doc/v1.5.6/#index_gettext_padid_rev
+ See       : http://etherpad.org/doc/v1.6.0/#index_gettext_padid_rev
 
 =cut
 
@@ -766,7 +766,7 @@ sub get_text {
  Purpose   : Sets the text of a pad
  Returns   : 1 if it succeeds
  Argument  : Takes a pad ID and the text you want to set (both mandatory)
- See       : http://etherpad.org/doc/v1.5.6/#index_settext_padid_text
+ See       : http://etherpad.org/doc/v1.6.0/#index_settext_padid_text
 
 =cut
 
@@ -799,13 +799,52 @@ sub set_text {
 
 #################### subroutine header begin ####################
 
+=head3 append_text
+
+ Usage     : $ec->append_text('padID', 'text')
+ Purpose   : Appends text to a pad
+ Returns   : 1 if it succeeds
+ Argument  : Takes a pad ID and the text you want to append (both mandatory)
+ See       : http://etherpad.org/doc/v1.6.0/#index_appendtext_padid_text
+
+=cut
+
+#################### subroutine header end ####################
+
+
+sub append_text {
+    my $c      = shift;
+    my $pad_id = shift;
+    my $text   = shift;
+
+    unless (defined($text)) {
+        carp 'Please provide 2 arguments : a pad id and a text';
+        return undef;
+    }
+
+    my $args = {
+        padID => $pad_id,
+        text  => $text
+    };
+
+    return $c->_execute({
+        api     => '1.2.13',
+        method  => 'appendText',
+        boolean => 1,
+        args    => $args
+    });
+}
+
+
+#################### subroutine header begin ####################
+
 =head3 get_html
 
  Usage     : $ec->get_html('padID', ['rev'])
  Purpose   : Returns the text of a pad formatted as html
  Returns   : A string, containing the text of the pad formatted as html
  Argument  : Takes a pad ID (mandatory) and optionally a revision number
- See       : http://etherpad.org/doc/v1.5.6/#index_gethtml_padid_rev
+ See       : http://etherpad.org/doc/v1.6.0/#index_gethtml_padid_rev
 
 =cut
 
@@ -844,7 +883,7 @@ sub get_html {
  Purpose   : Sets the text of a pad based on HTML, HTML must be well formed.
  Returns   : 1 if it succeeds
  Argument  : Takes a pad ID and the HTML code you want to set (both mandatory)
- See       : http://etherpad.org/doc/v1.5.6/#index_sethtml_padid_html
+ See       : http://etherpad.org/doc/v1.6.0/#index_sethtml_padid_html
 
 =cut
 
@@ -886,7 +925,7 @@ sub set_html {
              * attribToNum, containing a hash reference, which keys are string and contents are integers
              * nextNum, which content is an integer
  Argument  : Takes a pad ID (mandatory)
- See       : http://etherpad.org/doc/v1.5.6/#index_getattributepool_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_getattributepool_padid
 
 =cut
 
@@ -923,7 +962,7 @@ sub get_attribute_pool {
  Purpose   : Get the changeset at a given revision, or last revision if 'rev' is not defined
  Returns   : A string, representing an etherpad changeset
  Argument  : Takes a pad ID (mandatory) and optionally a revision number
- See       : http://etherpad.org/doc/v1.5.6/#index_getrevisionchangeset_padid_rev
+ See       : http://etherpad.org/doc/v1.6.0/#index_getrevisionchangeset_padid_rev
 
 =cut
 
@@ -963,7 +1002,7 @@ sub get_revision_changeset {
              * html, which content is a string representing the diff between the two revisions
              * authors, which content is an array reference of authors
  Argument  : Takes a pad ID, a revision number to start and a revision number to end. All arguments are mandatory
- See       : http://etherpad.org/doc/v1.5.6/#index_creatediffhtml_padid_startrev_endrev
+ See       : http://etherpad.org/doc/v1.6.0/#index_creatediffhtml_padid_startrev_endrev
 
 =cut
 
@@ -1008,7 +1047,7 @@ sub create_diff_html {
 #################################################################
 =head2 Chat
 
-See L<http://etherpad.org/doc/v1.5.6/#index_chat>
+See L<http://etherpad.org/doc/v1.6.0/#index_chat>
 
 =cut
 #################################################################
@@ -1029,7 +1068,7 @@ See L<http://etherpad.org/doc/v1.5.6/#index_chat>
  Argument  : Takes a pad ID (mandatory) and optionally the start and the end numbers of the messages you want.
              The start number can't be higher than or equal to the current chatHead. The first chat message is number 0.
              If you specify a start but not an end, all messages will be returned.
- See       : http://etherpad.org/doc/v1.5.6/#index_getchathistory_padid_start_end
+ See       : http://etherpad.org/doc/v1.6.0/#index_getchathistory_padid_start_end
 
 =cut
 
@@ -1070,7 +1109,7 @@ sub get_chat_history {
  Purpose   : Returns the chatHead (last number of the last chat-message) of the pad
  Returns   : The last chat-message number. -1 if there is no chat message
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_getchathead_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_getchathead_padid
 
 =cut
 
@@ -1162,7 +1201,7 @@ sub append_chat_message {
 
 Group pads are normal pads, but with the name schema GROUPID$PADNAME. A security manager controls access of them and its forbidden for normal pads to include a $ in the name.
 
-See L<http://etherpad.org/doc/v1.5.6/#index_pad>
+See L<http://etherpad.org/doc/v1.6.0/#index_pad>
 
 =cut
 #################################################################
@@ -1175,7 +1214,7 @@ See L<http://etherpad.org/doc/v1.5.6/#index_pad>
  Purpose   : Creates a new (non-group) pad. Note that if you need to create a group Pad, you should call create_group_pad.
  Returns   : 1 if it succeeds
  Argument  : Takes a pad ID (mandatory) and optionally a text to fill the pad
- See       : http://etherpad.org/doc/v1.5.6/#index_createpad_padid_text
+ See       : http://etherpad.org/doc/v1.6.0/#index_createpad_padid_text
 
 =cut
 
@@ -1214,7 +1253,7 @@ sub create_pad {
  Purpose   : Returns the number of revisions of this pad
  Returns   : The number of revisions
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_getrevisionscount_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_getrevisionscount_padid
 
 =cut
 
@@ -1251,7 +1290,7 @@ sub get_revisions_count {
  Purpose   : Returns the number of saved revisions of this pad
  Returns   : The number of saved revisions
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_getsavedrevisionscount_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_getsavedrevisionscount_padid
 
 =cut
 
@@ -1288,7 +1327,7 @@ sub get_saved_revisions_count {
  Purpose   : Returns the list of saved revisions of this pad
  Returns   : An array or an array reference, depending of the context, containing the saved revisions numbers
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_listsavedrevisions_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_listsavedrevisions_padid
 
 =cut
 
@@ -1325,7 +1364,7 @@ sub list_saved_revisions {
  Purpose   : Saves a revision
  Returns   : 1 if it succeeds
  Argument  : Takes a pad ID (mandatory) and optionally a revision number
- See       : http://etherpad.org/doc/v1.5.6/#index_saverevision_padid_rev
+ See       : http://etherpad.org/doc/v1.6.0/#index_saverevision_padid_rev
 
 =cut
 
@@ -1368,7 +1407,7 @@ sub save_revision {
  Purpose   : Returns the number of user that are currently editing this pad
  Returns   : The number of users
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_paduserscount_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_paduserscount_padid
 
 =cut
 
@@ -1412,7 +1451,7 @@ sub pad_users_count {
  Purpose   : Returns the list of users that are currently editing this pad
  Returns   : An array or an array reference, depending of the context, containing hash references with 3 keys : colorId, name and timestamp
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_padusers_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_padusers_padid
 
 =cut
 
@@ -1449,7 +1488,7 @@ sub pad_users {
  Purpose   : Deletes a pad
  Returns   : 1 if it succeeds
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_deletepad_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_deletepad_padid
 
 =cut
 
@@ -1488,7 +1527,7 @@ sub delete_pad {
  Argument  : A source pad ID
              A destination pad ID
              A force flag : a value which is true or false, in perl interpretation (for example; 0 and '' are false, 1, 2 and 'foo' are true)
- See       : http://etherpad.org/doc/v1.5.6/#index_copypad_sourceid_destinationid_force_false
+ See       : http://etherpad.org/doc/v1.6.0/#index_copypad_sourceid_destinationid_force_false
 
 =cut
 
@@ -1539,7 +1578,7 @@ sub copy_pad {
  Argument  : A source pad ID
              A destination pad ID
              A force flag : a value which is true or false, in perl interpretation (for example; 0 and '' are false, 1, 2 and 'foo' are true)
- See       : http://etherpad.org/doc/v1.5.6/#index_movepad_sourceid_destinationid_force_false
+ See       : http://etherpad.org/doc/v1.6.0/#index_movepad_sourceid_destinationid_force_false
 
 =cut
 
@@ -1588,7 +1627,7 @@ sub move_pad {
  Purpose   : Returns the read only link of a pad
  Returns   : A string
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_getreadonlyid_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_getreadonlyid_padid
 
 =cut
 
@@ -1625,7 +1664,7 @@ sub get_read_only_id {
  Purpose   : Returns the id of a pad which is assigned to the readOnlyID
  Returns   : A string
  Argument  : A read only ID
- See       : http://etherpad.org/doc/v1.5.6/#index_getpadid_readonlyid
+ See       : http://etherpad.org/doc/v1.6.0/#index_getpadid_readonlyid
 
 =cut
 
@@ -1662,7 +1701,7 @@ sub get_pad_id {
  Purpose   : Sets a boolean for the public status of a pad
  Returns   : 1 if it succeeds
  Argument  : A pad ID and the public status you want to set : 1 or 0
- See       : http://etherpad.org/doc/v1.5.6/#index_setpublicstatus_padid_publicstatus
+ See       : http://etherpad.org/doc/v1.6.0/#index_setpublicstatus_padid_publicstatus
 
 =cut
 
@@ -1701,7 +1740,7 @@ sub set_public_status {
  Purpose   : Return true of false
  Returns   : 1 or 0
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_getpublicstatus_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_getpublicstatus_padid
 
 =cut
 
@@ -1738,7 +1777,7 @@ sub get_public_status {
  Purpose   : Returns ok or a error message
  Returns   : 1 if it succeeds
  Argument  : A pad ID and a password
- See       : http://etherpad.org/doc/v1.5.6/#index_setpassword_padid_password
+ See       : http://etherpad.org/doc/v1.6.0/#index_setpassword_padid_password
 
 =cut
 
@@ -1777,7 +1816,7 @@ sub set_password {
  Purpose   : Returns true or false
  Returns   : 1 or 0
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_ispasswordprotected_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_ispasswordprotected_padid
 
 =cut
 
@@ -1814,7 +1853,7 @@ sub is_password_protected {
  Purpose   : Returns an array of authors who contributed to this pad
  Returns   : An array or an array reference depending on the context, containing the epl authors IDs
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_listauthorsofpad_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_listauthorsofpad_padid
 
 =cut
 
@@ -1894,7 +1933,7 @@ sub list_names_of_authors_of_pad {
  Purpose   : Returns the timestamp of the last revision of the pad
  Returns   : A unix timestamp
  Argument  : A pad ID
- See       : http://etherpad.org/doc/v1.5.6/#index_getlastedited_padid
+ See       : http://etherpad.org/doc/v1.6.0/#index_getlastedited_padid
 
 =cut
 
@@ -1931,7 +1970,7 @@ sub get_last_edited {
  Purpose   : Sends a custom message of type msg to the pad
  Returns   : 1 if it succeeds
  Argument  : A pad ID and the message you want to send
- See       : http://etherpad.org/doc/v1.5.6/#index_sendclientsmessage_padid_msg
+ See       : http://etherpad.org/doc/v1.6.0/#index_sendclientsmessage_padid_msg
 
 =cut
 
@@ -1970,7 +2009,7 @@ sub send_clients_message {
  Purpose   : Returns ok when the current api token is valid
  Returns   : 1 if the token is valid, 0 otherwise
  Argument  : None
- See       : http://etherpad.org/doc/v1.5.6/#index_checktoken
+ See       : http://etherpad.org/doc/v1.6.0/#index_checktoken
 
 =cut
 
@@ -1994,7 +2033,7 @@ sub check_token {
 #################################################################
 =head2 Pads
 
-See L<http://etherpad.org/doc/v1.5.6/#index_pads>
+See L<http://etherpad.org/doc/v1.6.0/#index_pads>
 
 =cut
 #################################################################
@@ -2006,7 +2045,7 @@ See L<http://etherpad.org/doc/v1.5.6/#index_pads>
  Usage     : $ec->list_all_pads()
  Purpose   : Lists all pads on this epl instance
  Returns   : An array or an array reference depending on the context, containing the pads names
- See       : http://etherpad.org/doc/v1.5.6/#index_listallpads
+ See       : http://etherpad.org/doc/v1.6.0/#index_listallpads
 
 =cut
 
@@ -2044,12 +2083,12 @@ You can find documentation for this module with the perldoc command.
 
 Bugs and feature requests will be tracked on:
 
-    https://git.framasoft.org/luc/etherpad/issues
+    https://framagit.org/luc/etherpad/issues
 
 The latest source code can be browsed and fetched at:
 
-    https://git.framasoft.org/luc/etherpad
-    git clone https://git.framasoft.org/luc/etherpad.git
+    https://framagit.org/luc/etherpad
+    git clone https://framagit.org/luc/etherpad.git
 
 Source code mirror:
 

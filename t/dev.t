@@ -10,7 +10,7 @@ plan skip_all => 'set TEST_ETHERPAD to enable this test (developer only!)' unles
 
 my $ec = Etherpad->new(
     {
-        url    => 'http://localhost',
+        url    => 'http://localhost:9001',
         apikey => '9ada672cd9e9d3d7f1d4b65f57dede90de5b84287721ba5994b370eb95969bc0'
     }
 );
@@ -74,6 +74,10 @@ is $ec->get_saved_revisions_count($p), 1, 'getSavedRevisionsCount 2';
 
 $t = $ec->list_saved_revisions($p);
 is_deeply $t, [1], 'listSavedRevisions 2';
+
+ok $ec->append_text($p, "\nFezes are cool"), 'appendText';
+
+is $ec->get_text($p), "I'm an alien, alright? Let's drop the subject.\nAnd use accents: é\nFezes are cool\n", 'getText after appendText';
 
 is $ec->get_users_count($p), 0, 'padUsersCount';
 
