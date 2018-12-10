@@ -15,7 +15,7 @@ has 'password';
 has 'proxy';
 has 'ua' => sub { Mojo::UserAgent->new; };
 
-our $VERSION = '1.2.13.0';
+our $VERSION = '1.2.13.1';
 
 =head1 SYNOPSIS
 
@@ -114,8 +114,9 @@ sub _execute {
 
     $args->{args}->{apikey} = $c->apikey;
 
-    my $tx = $c->ua->get($url => form => $args->{args});
-    if (my $res = $tx->success) {
+    my $tx  = $c->ua->get($url => form => $args->{args});
+    my $res = $tx->result;
+    if ($res->is_success) {
         my $json = $res->json;
         if ($json->{code} == 0) {
             return 1 if $args->{boolean};
@@ -133,7 +134,7 @@ sub _execute {
             return undef;
         }
     } else {
-        carp Dumper $tx->error;
+        carp Dumper $res->message;
         return undef;
     }
 }
@@ -996,7 +997,7 @@ sub get_revision_changeset {
 
 =head3 create_diff_html
 
- Usage     : $ec->create_diff_html
+ Usage     : $ec->create_diff_html('padId', rev1, rev2)
  Purpose   : Returns an object of diffs from 2 points in a pad
  Returns   : A hash reference which keys are
              * html, which content is a string representing the diff between the two revisions
@@ -1039,6 +1040,50 @@ sub create_diff_html {
     return $c->_execute({
         api     => '1.2.7',
         method  => 'createDiffHTML',
+        args    => $args
+    });
+}
+
+
+#################### subroutine header begin ####################
+
+=head3 restore_revision
+
+ Usage     : $ec->restore_revision('padId', rev)
+ Purpose   : Restores revision from past as new changeset
+ Returns   : 1 if it succeeds
+ Argument  : Takes a pad ID, a revision number to restore. All arguments are mandatory
+ See       : http://etherpad.org/doc/v1.7.0/#index_restorerevision_padid_rev
+
+=cut
+
+#################### subroutine header end ####################
+
+
+sub restore_revision {
+    my $c      = shift;
+    my $pad_id = shift;
+    my $rev    = shift;
+
+    unless (defined($pad_id)) {
+        carp 'Please provide a pad id, a start_rev and an end_rev';
+        return undef;
+    }
+
+    unless (defined($rev)) {
+        carp 'Please provide a revision number';
+        return undef;
+    }
+
+    my $args = {
+        padID => $pad_id,
+        rev   => $rev
+    };
+
+    return $c->_execute({
+        api     => '1.2.11',
+        method  => 'restoreRevision',
+        boolean => 1,
         args    => $args
     });
 }
@@ -2083,12 +2128,12 @@ You can find documentation for this module with the perldoc command.
 
 Bugs and feature requests will be tracked on:
 
-    https://framagit.org/luc/etherpad/issues
+    https://framagit.org/fiat-tux/etherpad/issues
 
 The latest source code can be browsed and fetched at:
 
-    https://framagit.org/luc/etherpad
-    git clone https://framagit.org/luc/etherpad.git
+    https://framagit.org/fiat-tux/etherpad
+    git clone https://framagit.org/fiat-tux/etherpad.git
 
 Source code mirror:
 

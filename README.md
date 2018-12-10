@@ -4,7 +4,7 @@ Etherpad - interact with Etherpad API
 
 # VERSION
 
-version 1.2.13.0
+version 1.2.13.1
 
 # SYNOPSIS
 
@@ -288,13 +288,21 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/do
 
 ### create\_diff\_html
 
-    Usage     : $ec->create_diff_html
+    Usage     : $ec->create_diff_html('padId', rev1, rev2)
     Purpose   : Returns an object of diffs from 2 points in a pad
     Returns   : A hash reference which keys are
                 * html, which content is a string representing the diff between the two revisions
                 * authors, which content is an array reference of authors
     Argument  : Takes a pad ID, a revision number to start and a revision number to end. All arguments are mandatory
     See       : http://etherpad.org/doc/v1.6.0/#index_creatediffhtml_padid_startrev_endrev
+
+### restore\_revision
+
+    Usage     : $ec->restore_revision('padId', rev)
+    Purpose   : Restores revision from past as new changeset
+    Returns   : 1 if it succeeds
+    Argument  : Takes a pad ID, a revision number to restore. All arguments are mandatory
+    See       : http://etherpad.org/doc/v1.7.0/#index_restorerevision_padid_rev
 
 ## Chat
 
@@ -544,12 +552,12 @@ You can find documentation for this module with the perldoc command.
 
 Bugs and feature requests will be tracked on:
 
-    https://framagit.org/luc/etherpad/issues
+    https://framagit.org/fiat-tux/etherpad/issues
 
 The latest source code can be browsed and fetched at:
 
-    https://framagit.org/luc/etherpad
-    git clone https://framagit.org/luc/etherpad.git
+    https://framagit.org/fiat-tux/etherpad
+    git clone https://framagit.org/fiat-tux/etherpad.git
 
 Source code mirror:
 
