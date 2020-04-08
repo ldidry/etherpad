@@ -1,6 +1,9 @@
 Revision history for Etherpad
 
 {{$NEXT}}
+    - Avoid empty json bug when response is very large
+
+1.2.13.1  2018-12-10 11:28:13 UTC
     - Add missing restoreRevision method
     - Upgrade dependency to Mojolicious >= 8
 
