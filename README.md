@@ -4,7 +4,7 @@ Etherpad - interact with Etherpad API
 
 # VERSION
 
-version 1.2.13.2
+version 1.2.14.0
 
 # SYNOPSIS
 
@@ -87,7 +87,7 @@ Etherpad inherits all methods from Mojo::Base and implements the following new o
 
 Pads can belong to a group. The padID of grouppads is starting with a groupID like g.asdfasdfasdfasdf$test
 
-See [http://etherpad.org/doc/v1.6.0/#index\_groups](http://etherpad.org/doc/v1.6.0/#index_groups)
+See [https://etherpad.org/doc/v1.6.0/#index\_groups](https://etherpad.org/doc/v1.6.0/#index_groups)
 
 ### create\_group
 
@@ -95,7 +95,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_groups](http://etherpad.org/doc/v1.6
     Purpose   : Creates a new group
     Returns   : The new group ID
     Argument  : None
-    See       : http://etherpad.org/doc/v1.6.0/#index_creategroup
+    See       : https://etherpad.org/doc/v1.6.0/#index_creategroup
 
 ### create\_group\_if\_not\_exists\_for
 
@@ -103,7 +103,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_groups](http://etherpad.org/doc/v1.6
     Purpose   : This functions helps you to map your application group ids to epl group ids
     Returns   : The epl group id
     Argument  : Your application group id
-    See       : http://etherpad.org/doc/v1.6.0/#index_creategroupifnotexistsfor_groupmapper
+    See       : https://etherpad.org/doc/v1.6.0/#index_creategroupifnotexistsfor_groupmapper
 
 ### delete\_group
 
@@ -111,7 +111,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_groups](http://etherpad.org/doc/v1.6
     Purpose   : Deletes a group
     Returns   : 1 if it succeeds
     Argument  : The id of the group you want to delete
-    See       : http://etherpad.org/doc/v1.6.0/#index_deletegroup_groupid
+    See       : https://etherpad.org/doc/v1.6.0/#index_deletegroup_groupid
 
 ### list\_pads
 
@@ -119,7 +119,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_groups](http://etherpad.org/doc/v1.6
     Purpose   : Returns all pads of this group
     Returns   : An array or an array reference (depending on the context) which contains the pad ids
     Argument  : The id of the group from which you want the pads
-    See       : http://etherpad.org/doc/v1.6.0/#index_listpads_groupid
+    See       : https://etherpad.org/doc/v1.6.0/#index_listpads_groupid
 
 ### create\_group\_pad
 
@@ -127,7 +127,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_groups](http://etherpad.org/doc/v1.6
     Purpose   : Creates a new pad in this group
     Returns   : 1 if it succeeds
     Argument  : The group id, the pad name, optionally takes the pad's initial text
-    See       : http://etherpad.org/doc/v1.6.0/#index_creategrouppad_groupid_padname_text
+    See       : https://etherpad.org/doc/v1.6.0/#index_creategrouppad_groupid_padname_text
 
 ### list\_all\_groups
 
@@ -135,13 +135,13 @@ See [http://etherpad.org/doc/v1.6.0/#index\_groups](http://etherpad.org/doc/v1.6
     Purpose   : Lists all existing groups
     Returns   : An array or an array reference (depending on the context) which contains the groups ids
     Argument  : None
-    See       : http://etherpad.org/doc/v1.6.0/#index_listallgroups
+    See       : https://etherpad.org/doc/v1.6.0/#index_listallgroups
 
 ## Author
 
 These authors are bound to the attributes the users choose (color and name).
 
-See [http://etherpad.org/doc/v1.6.0/#index\_author](http://etherpad.org/doc/v1.6.0/#index_author)
+See [https://etherpad.org/doc/v1.6.0/#index\_author](https://etherpad.org/doc/v1.6.0/#index_author)
 
 ### create\_author
 
@@ -149,7 +149,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_author](http://etherpad.org/doc/v1.6
     Purpose   : Creates a new author
     Returns   : The new author ID
     Argument  : Optionally takes a string as argument : the new author's name
-    See       : http://etherpad.org/doc/v1.6.0/#index_createauthor_name
+    See       : https://etherpad.org/doc/v1.6.0/#index_createauthor_name
 
 ### create\_author\_if\_not\_exists\_for
 
@@ -157,7 +157,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_author](http://etherpad.org/doc/v1.6
     Purpose   : This functions helps you to map your application author ids to epl author ids
     Returns   : The epl author ID
     Argument  : Your application author ID (mandatory) and optionally the epl author name
-    See       : http://etherpad.org/doc/v1.6.0/#index_createauthorifnotexistsfor_authormapper_name
+    See       : https://etherpad.org/doc/v1.6.0/#index_createauthorifnotexistsfor_authormapper_name
 
 ### list\_pads\_of\_author
 
@@ -165,7 +165,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_author](http://etherpad.org/doc/v1.6
     Purpose   : Returns an array of all pads this author contributed to
     Returns   : An array or an array reference depending on the context, containing the pads names
     Argument  : An epl author ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_listpadsofauthor_authorid
+    See       : https://etherpad.org/doc/v1.6.0/#index_listpadsofauthor_authorid
 
 ### get\_author\_name
 
@@ -173,13 +173,13 @@ See [http://etherpad.org/doc/v1.6.0/#index\_author](http://etherpad.org/doc/v1.6
     Purpose   : Returns the Author Name of the author
     Returns   : The author name
     Argument  : The epl author ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_getauthorname_authorid
+    See       : https://etherpad.org/doc/v1.6.0/#index_getauthorname_authorid
 
 ## Session
 
 Sessions can be created between a group and an author. This allows an author to access more than one group. The sessionID will be set as a cookie to the client and is valid until a certain date. The session cookie can also contain multiple comma-seperated sessionIDs, allowing a user to edit pads in different groups at the same time. Only users with a valid session for this group, can access group pads. You can create a session after you authenticated the user at your web application, to give them access to the pads. You should save the sessionID of this session and delete it after the user logged out.
 
-See [http://etherpad.org/doc/v1.6.0/#index\_session](http://etherpad.org/doc/v1.6.0/#index_session)
+See [https://etherpad.org/doc/v1.6.0/#index\_session](https://etherpad.org/doc/v1.6.0/#index_session)
 
 ### create\_session
 
@@ -187,7 +187,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_session](http://etherpad.org/doc/v1.
     Purpose   : Creates a new session. validUntil is an unix timestamp in seconds
     Returns   : The epl session ID
     Argument  : An epl group ID, an epl author ID and an valid unix timestamp (the session validity end date)
-    See       : http://etherpad.org/doc/v1.6.0/#index_createsession_groupid_authorid_validuntil
+    See       : https://etherpad.org/doc/v1.6.0/#index_createsession_groupid_authorid_validuntil
 
 ### delete\_session
 
@@ -195,7 +195,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_session](http://etherpad.org/doc/v1.
     Purpose   : Deletes a session
     Returns   : 1 if it succeeds
     Argument  : An epl session ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_deletesession_sessionid
+    See       : https://etherpad.org/doc/v1.6.0/#index_deletesession_sessionid
 
 ### get\_session\_info
 
@@ -203,7 +203,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_session](http://etherpad.org/doc/v1.
     Purpose   : Returns informations about a session
     Returns   : A hash reference, containing 3 keys : authorID, groupID and validUntil
     Argument  : An epl session ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_getsessioninfo_sessionid
+    See       : https://etherpad.org/doc/v1.6.0/#index_getsessioninfo_sessionid
 
 ### list\_sessions\_of\_group
 
@@ -211,7 +211,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_session](http://etherpad.org/doc/v1.
     Purpose   : Returns all sessions of a group
     Returns   : Returns a hash reference, which keys are sessions ID and values are sessions infos (see get_session_info)
     Argument  : An epl group ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_listsessionsofgroup_groupid
+    See       : https://etherpad.org/doc/v1.6.0/#index_listsessionsofgroup_groupid
 
 ### list\_sessions\_of\_author
 
@@ -219,13 +219,13 @@ See [http://etherpad.org/doc/v1.6.0/#index\_session](http://etherpad.org/doc/v1.
     Purpose   : Returns all sessions of an author
     Returns   : Returns a hash reference, which keys are sessions ID and values are sessions infos (see get_session_info)
     Argument  : An epl group ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_listsessionsofauthor_authorid
+    See       : https://etherpad.org/doc/v1.6.0/#index_listsessionsofauthor_authorid
 
 ## Pad Content
 
 Pad content can be updated and retrieved through the API.
 
-See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/doc/v1.6.0/#index_pad_content)
+See [https://etherpad.org/doc/v1.6.0/#index\_pad\_content](https://etherpad.org/doc/v1.6.0/#index_pad_content)
 
 ### get\_text
 
@@ -233,7 +233,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/do
     Purpose   : Returns the text of a pad
     Returns   : A string, containing the text of the pad
     Argument  : Takes a pad ID (mandatory) and optionally a revision number
-    See       : http://etherpad.org/doc/v1.6.0/#index_gettext_padid_rev
+    See       : https://etherpad.org/doc/v1.6.0/#index_gettext_padid_rev
 
 ### set\_text
 
@@ -241,7 +241,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/do
     Purpose   : Sets the text of a pad
     Returns   : 1 if it succeeds
     Argument  : Takes a pad ID and the text you want to set (both mandatory)
-    See       : http://etherpad.org/doc/v1.6.0/#index_settext_padid_text
+    See       : https://etherpad.org/doc/v1.6.0/#index_settext_padid_text
 
 ### append\_text
 
@@ -249,7 +249,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/do
     Purpose   : Appends text to a pad
     Returns   : 1 if it succeeds
     Argument  : Takes a pad ID and the text you want to append (both mandatory)
-    See       : http://etherpad.org/doc/v1.6.0/#index_appendtext_padid_text
+    See       : https://etherpad.org/doc/v1.6.0/#index_appendtext_padid_text
 
 ### get\_html
 
@@ -257,7 +257,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/do
     Purpose   : Returns the text of a pad formatted as html
     Returns   : A string, containing the text of the pad formatted as html
     Argument  : Takes a pad ID (mandatory) and optionally a revision number
-    See       : http://etherpad.org/doc/v1.6.0/#index_gethtml_padid_rev
+    See       : https://etherpad.org/doc/v1.6.0/#index_gethtml_padid_rev
 
 ### set\_html
 
@@ -265,7 +265,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/do
     Purpose   : Sets the text of a pad based on HTML, HTML must be well formed.
     Returns   : 1 if it succeeds
     Argument  : Takes a pad ID and the HTML code you want to set (both mandatory)
-    See       : http://etherpad.org/doc/v1.6.0/#index_sethtml_padid_html
+    See       : https://etherpad.org/doc/v1.6.0/#index_sethtml_padid_html
 
 ### get\_attribute\_pool
 
@@ -276,7 +276,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/do
                 * attribToNum, containing a hash reference, which keys are string and contents are integers
                 * nextNum, which content is an integer
     Argument  : Takes a pad ID (mandatory)
-    See       : http://etherpad.org/doc/v1.6.0/#index_getattributepool_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_getattributepool_padid
 
 ### get\_revision\_changeset
 
@@ -284,7 +284,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/do
     Purpose   : Get the changeset at a given revision, or last revision if 'rev' is not defined
     Returns   : A string, representing an etherpad changeset
     Argument  : Takes a pad ID (mandatory) and optionally a revision number
-    See       : http://etherpad.org/doc/v1.6.0/#index_getrevisionchangeset_padid_rev
+    See       : https://etherpad.org/doc/v1.6.0/#index_getrevisionchangeset_padid_rev
 
 ### create\_diff\_html
 
@@ -294,7 +294,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/do
                 * html, which content is a string representing the diff between the two revisions
                 * authors, which content is an array reference of authors
     Argument  : Takes a pad ID, a revision number to start and a revision number to end. All arguments are mandatory
-    See       : http://etherpad.org/doc/v1.6.0/#index_creatediffhtml_padid_startrev_endrev
+    See       : https://etherpad.org/doc/v1.6.0/#index_creatediffhtml_padid_startrev_endrev
 
 ### restore\_revision
 
@@ -302,11 +302,11 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad\_content](http://etherpad.org/do
     Purpose   : Restores revision from past as new changeset
     Returns   : 1 if it succeeds
     Argument  : Takes a pad ID, a revision number to restore. All arguments are mandatory
-    See       : http://etherpad.org/doc/v1.7.0/#index_restorerevision_padid_rev
+    See       : https://etherpad.org/doc/v1.7.0/#index_restorerevision_padid_rev
 
 ## Chat
 
-See [http://etherpad.org/doc/v1.6.0/#index\_chat](http://etherpad.org/doc/v1.6.0/#index_chat)
+See [https://etherpad.org/doc/v1.6.0/#index\_chat](https://etherpad.org/doc/v1.6.0/#index_chat)
 
 ### get\_chat\_history
 
@@ -322,7 +322,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_chat](http://etherpad.org/doc/v1.6.0
     Argument  : Takes a pad ID (mandatory) and optionally the start and the end numbers of the messages you want.
                 The start number can't be higher than or equal to the current chatHead. The first chat message is number 0.
                 If you specify a start but not an end, all messages will be returned.
-    See       : http://etherpad.org/doc/v1.6.0/#index_getchathistory_padid_start_end
+    See       : https://etherpad.org/doc/v1.6.0/#index_getchathistory_padid_start_end
 
 ### get\_chat\_head
 
@@ -330,7 +330,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_chat](http://etherpad.org/doc/v1.6.0
     Purpose   : Returns the chatHead (last number of the last chat-message) of the pad
     Returns   : The last chat-message number. -1 if there is no chat message
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_getchathead_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_getchathead_padid
 
 ### append\_chat\_message
 
@@ -344,7 +344,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_chat](http://etherpad.org/doc/v1.6.0
 
 Group pads are normal pads, but with the name schema GROUPID$PADNAME. A security manager controls access of them and its forbidden for normal pads to include a $ in the name.
 
-See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/#index_pad)
+See [https://etherpad.org/doc/v1.6.0/#index\_pad](https://etherpad.org/doc/v1.6.0/#index_pad)
 
 ### create\_pad
 
@@ -352,7 +352,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Creates a new (non-group) pad. Note that if you need to create a group Pad, you should call create_group_pad.
     Returns   : 1 if it succeeds
     Argument  : Takes a pad ID (mandatory) and optionally a text to fill the pad
-    See       : http://etherpad.org/doc/v1.6.0/#index_createpad_padid_text
+    See       : https://etherpad.org/doc/v1.6.0/#index_createpad_padid_text
 
 ### get\_revisions\_count
 
@@ -360,7 +360,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns the number of revisions of this pad
     Returns   : The number of revisions
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_getrevisionscount_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_getrevisionscount_padid
 
 ### get\_saved\_revisions\_count
 
@@ -368,7 +368,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns the number of saved revisions of this pad
     Returns   : The number of saved revisions
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_getsavedrevisionscount_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_getsavedrevisionscount_padid
 
 ### list\_saved\_revisions
 
@@ -376,7 +376,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns the list of saved revisions of this pad
     Returns   : An array or an array reference, depending of the context, containing the saved revisions numbers
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_listsavedrevisions_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_listsavedrevisions_padid
 
 ### save\_revision
 
@@ -384,7 +384,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Saves a revision
     Returns   : 1 if it succeeds
     Argument  : Takes a pad ID (mandatory) and optionally a revision number
-    See       : http://etherpad.org/doc/v1.6.0/#index_saverevision_padid_rev
+    See       : https://etherpad.org/doc/v1.6.0/#index_saverevision_padid_rev
 
 ### get\_users\_count
 
@@ -396,7 +396,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns the number of user that are currently editing this pad
     Returns   : The number of users
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_paduserscount_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_paduserscount_padid
 
 ### pad\_users
 
@@ -404,7 +404,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns the list of users that are currently editing this pad
     Returns   : An array or an array reference, depending of the context, containing hash references with 3 keys : colorId, name and timestamp
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_padusers_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_padusers_padid
 
 ### delete\_pad
 
@@ -412,7 +412,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Deletes a pad
     Returns   : 1 if it succeeds
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_deletepad_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_deletepad_padid
 
 ### copy\_pad
 
@@ -422,7 +422,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Argument  : A source pad ID
                 A destination pad ID
                 A force flag : a value which is true or false, in perl interpretation (for example; 0 and '' are false, 1, 2 and 'foo' are true)
-    See       : http://etherpad.org/doc/v1.6.0/#index_copypad_sourceid_destinationid_force_false
+    See       : https://etherpad.org/doc/v1.6.0/#index_copypad_sourceid_destinationid_force_false
 
 ### move\_pad
 
@@ -432,7 +432,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Argument  : A source pad ID
                 A destination pad ID
                 A force flag : a value which is true or false, in perl interpretation (for example; 0 and '' are false, 1, 2 and 'foo' are true)
-    See       : http://etherpad.org/doc/v1.6.0/#index_movepad_sourceid_destinationid_force_false
+    See       : https://etherpad.org/doc/v1.6.0/#index_movepad_sourceid_destinationid_force_false
 
 ### get\_read\_only\_id
 
@@ -440,7 +440,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns the read only link of a pad
     Returns   : A string
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_getreadonlyid_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_getreadonlyid_padid
 
 ### get\_pad\_id
 
@@ -448,7 +448,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns the id of a pad which is assigned to the readOnlyID
     Returns   : A string
     Argument  : A read only ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_getpadid_readonlyid
+    See       : https://etherpad.org/doc/v1.6.0/#index_getpadid_readonlyid
 
 ### set\_public\_status
 
@@ -456,7 +456,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Sets a boolean for the public status of a pad
     Returns   : 1 if it succeeds
     Argument  : A pad ID and the public status you want to set : 1 or 0
-    See       : http://etherpad.org/doc/v1.6.0/#index_setpublicstatus_padid_publicstatus
+    See       : https://etherpad.org/doc/v1.6.0/#index_setpublicstatus_padid_publicstatus
 
 ### get\_public\_status
 
@@ -464,7 +464,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Return true of false
     Returns   : 1 or 0
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_getpublicstatus_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_getpublicstatus_padid
 
 ### set\_password
 
@@ -472,7 +472,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns ok or a error message
     Returns   : 1 if it succeeds
     Argument  : A pad ID and a password
-    See       : http://etherpad.org/doc/v1.6.0/#index_setpassword_padid_password
+    See       : https://etherpad.org/doc/v1.6.0/#index_setpassword_padid_password
 
 ### is\_password\_protected
 
@@ -480,7 +480,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns true or false
     Returns   : 1 or 0
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_ispasswordprotected_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_ispasswordprotected_padid
 
 ### list\_authors\_of\_pad
 
@@ -488,7 +488,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns an array of authors who contributed to this pad
     Returns   : An array or an array reference depending on the context, containing the epl authors IDs
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_listauthorsofpad_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_listauthorsofpad_padid
 
 ### list\_names\_of\_authors\_of\_pad
 
@@ -504,7 +504,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns the timestamp of the last revision of the pad
     Returns   : A unix timestamp
     Argument  : A pad ID
-    See       : http://etherpad.org/doc/v1.6.0/#index_getlastedited_padid
+    See       : https://etherpad.org/doc/v1.6.0/#index_getlastedited_padid
 
 ### send\_clients\_message
 
@@ -512,7 +512,7 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Sends a custom message of type msg to the pad
     Returns   : 1 if it succeeds
     Argument  : A pad ID and the message you want to send
-    See       : http://etherpad.org/doc/v1.6.0/#index_sendclientsmessage_padid_msg
+    See       : https://etherpad.org/doc/v1.6.0/#index_sendclientsmessage_padid_msg
 
 ## check\_token
 
@@ -520,18 +520,31 @@ See [http://etherpad.org/doc/v1.6.0/#index\_pad](http://etherpad.org/doc/v1.6.0/
     Purpose   : Returns ok when the current api token is valid
     Returns   : 1 if the token is valid, 0 otherwise
     Argument  : None
-    See       : http://etherpad.org/doc/v1.6.0/#index_checktoken
+    See       : https://etherpad.org/doc/v1.6.0/#index_checktoken
 
 ## Pads
 
-See [http://etherpad.org/doc/v1.6.0/#index\_pads](http://etherpad.org/doc/v1.6.0/#index_pads)
+See [https://etherpad.org/doc/v1.6.0/#index\_pads](https://etherpad.org/doc/v1.6.0/#index_pads)
 
 ### list\_all\_pads
 
     Usage     : $ec->list_all_pads()
     Purpose   : Lists all pads on this epl instance
     Returns   : An array or an array reference depending on the context, containing the pads names
-    See       : http://etherpad.org/doc/v1.6.0/#index_listallpads
+    See       : https://etherpad.org/doc/v1.6.0/#index_listallpads
+
+## Global
+
+See [https://etherpad.org/doc/v1.8.3/#global](https://etherpad.org/doc/v1.8.3/#global)
+
+(URL not usable yet)
+
+### get\_stats
+
+    Usage     : $ec->get_stats()
+    Purpose   : Get stats of the etherpad instance
+    Returns   : A hash reference, containing 3 keys : totalPads, totalSessions and totalActivePads
+    See       : https://etherpad.org/doc/v1.8.3/#getstats (URL not usable yet)
 
 # INSTALL
 
